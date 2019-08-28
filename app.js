@@ -7,16 +7,16 @@ global.site_header_data = [];
 
 app
   .listen(8000, () => {
-    request("https://time.is", function(error, response, html) {
+    request("https://www.epochconverter.com", function(error, response, html) {
       if (!error && response.statusCode == 200) {
         const $ = cheerio.load(html);
 
-        const time = $(".leaps.leap0").text();
+        const time = $(".ecclock").text();
         // const site_header = time.text();
         // site_header_data.push(site_header);
         console.log(time);
       }
-      //console.log(response);
+      //console.log(error);
       //site_header_data.push(response);
     });
 
