@@ -3,10 +3,11 @@ var request = require("request");
 var cheerio = require("cheerio");
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 global.site_header_data = [];
 
 app
-  .listen(8000, () => {
+  .listen(PORT, () => {
     request("https://www.epochconverter.com", function(error, response, html) {
       if (!error && response.statusCode == 200) {
         const $ = cheerio.load(html);
