@@ -13,15 +13,15 @@ app
 
         const time = $(".ecclock").text();
         // const site_header = time.text();
-        // site_header_data.push(site_header);
+        site_header_data.push(time);
         console.log(time);
       }
-      //console.log(error);
+      //https://www.epochconverter.comconsole.log(error);
       //site_header_data.push(response);
     });
 
     app.get("/", (req, res) => {
-      //res.send(site_header_data);
+      res.send(site_header_data);
     });
   })
   .on("error", e => {
