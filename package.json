@@ -1,0 +1,19 @@
+{
+  "name": "trade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utkarshgitikansh/trade-ug.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/utkarshgitikansh/trade-ug/issues"
+  },
+  "homepage": "https://github.com/utkarshgitikansh/trade-ug#readme"
+}
