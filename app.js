@@ -8,20 +8,24 @@ global.site_header_data = [];
 
 app
   .listen(PORT, () => {
-    request("https://www.epochconverter.com", function(error, response, html) {
-      if (!error && response.statusCode == 200) {
-        const $ = cheerio.load(html);
-
-        const time = $(".ecclock").text();
-        // const site_header = time.text();
-        site_header_data.push(time);
-        console.log(time);
-      }
-      //https://www.epochconverter.comconsole.log(error);
-      //site_header_data.push(response);
-    });
-
     app.get("/", (req, res) => {
+      request("https://www.epochconverter.com", function(
+        error,
+        response,
+        html
+      ) {
+        if (!error && response.statusCode == 200) {
+          const $ = cheerio.load(html);
+
+          const time = $(".ecclock").text();
+          site_header_data = time;
+          //site_header_data.push(time);
+          console.log(time);
+        }
+        //https://www.epochconverter.comconsole.log(error);
+        //site_header_data.push(response);
+      });
+
       res.send(site_header_data);
     });
   })
